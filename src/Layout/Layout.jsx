@@ -45,8 +45,8 @@ const Layout = () => {
         `}
       >
         <Toolbar isOpen={isOpen} setIsOpen={setIsOpen} />
-        <div className="md:mx-10 ">
-          <Outlet />
+        <div className="">
+          <Outlet/>
         </div>
       </div>
     </div>

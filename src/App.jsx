@@ -1,10 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Layout from './Layout/Layout'
-
-const Home = () => {
-  return <div>Home Page</div>
-}
+import Sales from './pages/Sales'
 
 
 const App = () => {
@@ -14,7 +11,7 @@ const App = () => {
     <BrowserRouter>
     <Routes>
           <Route path="/" element={<Layout />}>
-                    <Route index element={<Home />} />
+           <Route index element={<Sales />} />
 
       </Route>
 
