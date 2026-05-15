@@ -4,6 +4,7 @@ import { MdOutlineContactPhone } from "react-icons/md";
 import { RiTodoLine } from "react-icons/ri";
 import { SlCalender } from "react-icons/sl";
 import { TbSmartHome } from "react-icons/tb";
+import { Link } from "react-router-dom";
 
 function Sidebar() {
   const [openId, setOpenId] = useState(null);
@@ -14,7 +15,15 @@ function Sidebar() {
       id: "dashboard",
       title: "Dashboard",
       icon: <TbSmartHome size={20} />,
-      children: [{ title: "Sales" }, { title: "Analysis" }],
+      children: [
+        {
+           title: "Sales" ,
+            path: "/"
+          }, 
+        {
+           title: "Analysis"
+           }
+      ],
     },
 
     {
@@ -22,6 +31,7 @@ function Sidebar() {
       items: [
         {
           title: "Todo List",
+          path:'app-todo',
           icon: <RiTodoLine size={20} />,
         },
         {
@@ -87,6 +97,7 @@ function Sidebar() {
                 onClick={() => setOpenId(openId === block.id ? null : block.id)}
                 className="flex gap-3 mt-2 hover:bg-[#1E2145] w-11/12 p-3 items-center ml-3 rounded-xl cursor-pointer text-[14px]"
               >
+                
                 <li className="text-gray-500 ml-1">{block.icon}</li>
                 <li className="font-semibold hover:text-white">{block.title}</li>
 
@@ -109,12 +120,15 @@ function Sidebar() {
               >
                 <ul className="ml-11 mr-6 text-[14px]">
                   {block.children.map((item, i) => (
+                    <Link to={item.path} key={i}>
+                    
                     <li
                       key={i}
                       className="p-2 hover:bg-[#1E2145] hover:text-white rounded-xl ml-3 cursor-pointer"
                     >
                       {item.title}
                     </li>
+                    </Link>
                   ))}
                 </ul>
               </div>
@@ -125,6 +139,7 @@ function Sidebar() {
           {block.items && (
             <ul>
               {block.items.map((item, i) => (
+                <Link to={item.path || "/"} key={i}>
                 <li
                   key={i}
                   className="flex gap-3 mt-2 hover:bg-[#1E2145] hover:text-white w-11/12 p-2 items-center ml-3 mr-3 rounded-xl cursor-pointer text-[14px]"
@@ -132,6 +147,7 @@ function Sidebar() {
                   <div className="text-gray-500 ml-2">{item.icon}</div>
                   <div className="font-semibold">{item.title}</div>
                 </li>
+                </Link>
               ))}
             </ul>
           )}

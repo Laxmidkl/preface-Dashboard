@@ -9,9 +9,9 @@ import { TbWindowMinimize } from 'react-icons/tb'
 const Toolbar = ({ isOpen, setIsOpen }) => {
 
   return (
-    <div className=' bg-[#F6F8FB] h-20 sticky z-50 w-full'>
+    <div className=' bg-[#F6F8FB] py-3 sticky z-50 w-full border-b  border-gray-300'>
 
-      <div className='flex items-center justify-between h-full px-4 '>
+      <div className='flex items-center justify-between h-full px-5 '>
 
         <ul className='flex gap-4 text-gray-500  items-center min-w-0'>
           <li

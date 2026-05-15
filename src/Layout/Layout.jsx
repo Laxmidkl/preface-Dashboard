@@ -45,7 +45,8 @@ const Layout = () => {
         `}
       >
         <Toolbar isOpen={isOpen} setIsOpen={setIsOpen} />
-        <div className="">
+        
+        <div className="px-5 bg-[#F6F8FB] ">
           <Outlet/>
         </div>
       </div>

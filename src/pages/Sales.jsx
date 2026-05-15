@@ -6,7 +6,7 @@ const Sales = () => {
  
 
   return (
-    <div className=" bg-[#F6F8FB] p-5">
+    <div className="">
     <SalesCard/>
     <SalesCategory/>
     </div>
